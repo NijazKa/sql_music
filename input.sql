@@ -15,19 +15,20 @@ INSERT INTO style_artist(style_id, artist_id)
 VALUES
     (1, 1),
     (1, 2),
-    (2, 3),
+    (2, 4),
+    (3, 3),
     (3, 2);
 
 INSERT INTO album(name, date_create)
 VALUES
-    ('A Kind of Magic', 1986),
-    ('Made in Heaven', 1995),
-    ('The Early Beatles', 1965),
-    ('Something New', 1964),
-    ('Like a Prayer', 1989),
-    ('Finally Enough Love', 2019),
-    ('The Eminem Show', 2002),
-    ('Recovery', 2010);
+    ('A Kind of Magic', '1986-03-23'),
+    ('Made in Heaven', '2020-04-23'),
+    ('The Early Beatles', '1965-04-12'),
+    ('Something New', '1964-05-20'),
+    ('Like a Prayer', '1989-01-01'),
+    ('Finally Enough Love', '2019-07-18'),
+    ('The Eminem Show', '2002-09-12'),
+    ('Recovery', '2010-04-10');
 
 INSERT INTO album_artist(album_id, artist_id)
 VALUES
@@ -40,7 +41,7 @@ VALUES
     (7, 4),
     (8, 4);
 
-INSERT INTO track(name, duration, track_id)
+INSERT INTO track(name, duration, album_id)
 VALUES
     ('One Vision', 310, 1),
     ('A Kind of Magic', 256, 1),
@@ -57,16 +58,16 @@ VALUES
     ('Express Yourself', 479, 5),
     ('Love Song', 492, 5),
     ('Promise to Try', 215, 5),
-    ('Holiday', 324, 6),
+    ('My Holiday', 200, 6),
     ('Into the Groove', 243, 6),
     ('Open Your Heart', 453, 6),
     ('Curtains Up', 29, 7),
-    ('White America', 324, 7),
+    ('My White America', 124, 7),
     ('Business', 287, 7),
     ('Square Dance', 176, 7),
     ('Cold Wind Blows', 276, 8),
-    ('On Fire', 365, 8),
-    ('Going Through Changes', 234, 8);
+    ('On Fire', 365, 8);
+
 
 INSERT INTO collection(name, date_create)
 VALUES
@@ -74,7 +75,7 @@ VALUES
     ('Greatest Hits III', '1990-02-20'),
     ('Rock ’n’ Roll Music', '1986-02-23'),
     ('A Collection of Beatles Oldies', '1980-11-02'),
-    ('The Immaculate Collection', '2010-02-01'),
+    ('The Immaculate Collection', '2019-02-01'),
     ('The Best of MNM', '2022-05-07');
 
 INSERT INTO track_collection(track_id, collection_id)
