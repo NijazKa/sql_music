@@ -1,23 +1,35 @@
 -- ЗАДАНИЕ 2
 
+-- Название и продолжительность самого длительного трека.
+
 SELECT name, duration FROM track
 ORDER BY duration DESC
 LIMIT 1;
 
+-- Название треков, продолжительность которых не менее 3,5 минут
+
 SELECT name, duration FROM track
 WHERE duration < 210;
+
+-- Названия сборников, вышедших в период с 2018 по 2020 год включительно.
 
 SELECT name FROM collection
 WHERE date_create BETWEEN '2018-01-01' AND '2021-01-01';
 
+-- Исполнители, чьё имя состоит из одного слова
+
 SELECT nickname FROM artist
 WHERE LENGTH(nickname) - LENGTH(REPLACE(nickname, ' ', '')) = 0
 
+-- Название треков, которые содержат слово «мой» или «my».    
+    
 SELECT name FROM track
 WHERE name LIKE '%My%';
 
 
 -- ЗАДАНИЕ 3
+
+--Количество исполнителей в каждом жанре.
 
 SELECT s.name AS название_группы, COUNT(a.id) AS количество_пользователей
 FROM style AS s
@@ -25,7 +37,6 @@ LEFT JOIN style_artist AS sa ON s.id = sa.style_id
 LEFT JOIN artist AS a ON sa.artist_id = a.id
 GROUP BY s.name
 ORDER BY s.name;
-
 
 -- Количество треков, вошедших в альбомы 2019–2020 годов.
 
